@@ -1,9 +1,4 @@
-﻿---
-title: "Supervisor Cluster"
-lastmod: 2020-08-01
-draft: false
-weight: 10
----
+﻿# Supervisor Cluster
 
 1. [Supervisor Cluster 활성화](1.md)
 1. [설치 환경 점검](2.md)

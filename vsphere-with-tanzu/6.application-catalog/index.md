@@ -1,7 +1,3 @@
-﻿---
-title: "Application Catalog"
-lastmod: 2020-09-18
-draft: false
-weight: 60
----
+﻿# Application Catalog
 
+1. [Kubeapps 설치](1.md)

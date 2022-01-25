@@ -1,7 +1,4 @@
-﻿---
-title: "Ingress"
-lastmod: 2020-09-18
-draft: false
-weight: 80
----
+﻿# Ingress
 
+1. [Contour](1.md)
+1. [Ingress, HTTPProxy](2.md)
