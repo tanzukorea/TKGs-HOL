@@ -1,9 +1,4 @@
----
-title: "JumpBox Ubuntu VM 설치"
-lastmod: 2020-08-01
-draft: true
-weight: 10
----
+## JumpBox Ubuntu VM 설치
 
 TKC의 Node는 내부 IP를 가지고 있어 외부에서 접근이 되지 않습니다.
 SupervisorControlPlaneVM은 외부에서 접근되며, SupervisorControlPlaneVM안에서 TKC Node 접속이 가능합니다.
