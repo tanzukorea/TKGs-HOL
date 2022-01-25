@@ -10,7 +10,7 @@ SupervisorControlPlaneVM은 외부에서 접근되며, SupervisorControlPlaneVM�
       - IP Address(외부): 10.193.109.45
     * vm-domain~~~
       - IP Address(내부): 10.244.0.228
-    ![ 그림 ](../images/supervisor-vm-networks.png)
+    ![ 그림 ](images/supervisor-vm-networks.png)
 
 ### JumpBox VM 생성시 아래 네트워크 정보로 기반으로 VM 생성
   - 연결된 Networks : SupervisorControlVM과 동일하게 셋팅
