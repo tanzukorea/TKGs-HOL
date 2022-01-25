@@ -4,9 +4,10 @@
 
 ## Required Artifacts
 * 인터넷 접속 가능한 PC
-* vSphere 7 with Tanzu 
+* vSphere 7 with Tanzu
 * SSH Terminal (windows Putty, macOS Terminal 등)
 
+## Courses
 1. [접속을 위한 Jumpbox VM 만들기](vsphere-with-tanzu/README.md)
 1. [Supervisor Cluster](vsphere-with-tanzu/1.supervisor-cluster/)
 1. [Supervisor Namespace 생성하기](vsphere-with-tanzu/2.supervisor-namespace/)
