@@ -26,7 +26,7 @@ SupervisorControlPlaneVM은 외부에서 접근되며, SupervisorControlPlaneVM�
 
 ### SupervisorControlPlaneVM 라우팅 테이블 확인
   - routetable 조회결과
-{{< highlight bash>}}
+```
 root@423fec13114cfdad68a006c03993d295 [ /etc/systemd/network ]# route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -39,10 +39,10 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 10.244.0.228    10.244.0.225    255.255.255.255 UGH   0      0        0 eth1
 100.64.0.0      10.244.0.225    255.255.0.0     UG    0      0        0 eth1
 root@423fec13114cfdad68a006c03993d295 [ /etc/systemd/network ]#
-{{< / highlight >}}
+```
 
   - routetable 설정 정보
-{{< highlight bash>}}
+```
 root@423fec13114cfdad68a006c03993d295 [ /etc/systemd/network ]# cat 10-eth1.network 
 [Match]
 Name = eth1
@@ -77,13 +77,13 @@ Gateway = 10.244.0.225
 Destination = 100.64.0.0/16
 
 root@423fec13114cfdad68a006c03993d295 [ /etc/systemd/network ]#
-{{< / highlight >}}
+```
 
 ### JumpBox VM 라우팅 테이블 설정
 VM 생성 직후 네트워크 접속이 안될수 있으니, vSphere Client UI에서 접근해서 아래 정보를 설정합니다.
 
   - SupervisorControlPlaneVM의 라우팅 테이블 정보를 참고하여 아래 포맷으로 ens19(내부용)의 설정을 수정합니다.
-{{< highlight bash>}}
+```
 root@jumpbox:/etc/netplan# cat 50-cloud-init.yaml
 # This file is generated from information provided by the datasource.  Changes
 # to it will not persist across an instance reboot.  To disable cloud-init's
@@ -116,10 +116,10 @@ network:
             via: 10.244.0.225
     version: 2
 root@jumpbox:/etc/netplan#
-{{< / highlight >}}
+```
 
   - 설정 결과 확인
-{{< highlight bash>}}
+```
 root@jumpbox:/etc/netplan# route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -132,18 +132,18 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 10.244.0.235    10.244.0.225    255.255.255.255 UGH   0      0        0 ens192
 100.64.0.0      10.244.0.225    255.255.0.0     UG    0      0        0 ens192
 root@jumpbox:/etc/netplan#
-{{< / highlight >}}
+```
 
 ### 접속확인
   - 외부에서 접속
-{{< highlight bash>}}
+```
 dhlee@dhlees-MacBook-Pro:~$ssh ubuntu@10.193.109.5
 ubuntu@10.193.109.5's password:
-{{< / highlight >}}
+```
 
   - JumpBox에서 tkc cluster 접근
-{{< highlight bash>}}
+```
 ubuntu@jumpbox:~$ ssh vmware-system-user@10.244.1.34
 Welcome to Photon 3.0 (\m) - Kernel \r (\l)
 vmware-system-user@10.244.1.34's password: 
-{{< / highlight >}}
+```
