@@ -44,7 +44,7 @@ VC_ADMIN_PASSWORD='~~~~~~' #Password for the Supervisor Cluster user
 {{< / highlight >}}
 
   - 실행결과
-{{< highlight bash "hl_lines=1" >}}
+{{< highlight bash "hl_lines=1)
 ubuntu@jumpbox:~/GitHub/vsphere-k8s-scripts$ ./tkg-insecure-registry-containerd.sh tkc-cluster-1 ns1 10.193.109.66
 curl 7.58.0 (x86_64-pc-linux-gnu) libcurl/7.58.0 OpenSSL/1.1.1 zlib/1.2.11 libidn2/2.0.4 libpsl/0.19.1 (+libidn2/2.0.4) nghttp2/1.30.0 librtmp/2.3
 Release-Date: 2018-01-24
@@ -89,7 +89,7 @@ kubectl expose deployment nginx-harbor --port 80 --type LoadBalancer --name ngin
 {{< / highlight >}}
 
   - 실행결과
-{{< highlight bash "hl_lines=1 3 5 7" >}}
+{{< highlight bash "hl_lines=1 3 5 7)
 ubuntu@jumpbox:~$ kubectl create deployment nginx-harbor --image=10.193.109.66/ns1/nginx
 deployment.apps/nginx-harbor created
 ubuntu@jumpbox:~$ kubectl expose deployment nginx-harbor --port 80 --type LoadBalancer --name nginx-harbor-svc
